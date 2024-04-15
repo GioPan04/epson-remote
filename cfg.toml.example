@@ -1,0 +1,8 @@
+[epson-remote]
+wifi_ssid = "mywifiname"
+wifi_pass = "mywifipass"
+
+mqtt_host = "myhost"
+mqtt_port = 1883
+mqtt_user = "myuser"
+mqtt_pass = "mypass"
