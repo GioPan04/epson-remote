@@ -16,3 +16,16 @@ pub struct Config {
     #[default("")]
     mqtt_pass: &'static str,
 }
+
+impl Config {
+    pub fn mqtt_uri(&self) -> String {
+        if !self.mqtt_pass.is_empty() {
+            format!(
+                "mqtt://{}:{}@{}:{}",
+                self.mqtt_user, self.mqtt_pass, self.mqtt_host, self.mqtt_port
+            )
+        } else {
+            format!("mqtt://{}:{}", self.mqtt_host, self.mqtt_port)
+        }
+    }
+}
